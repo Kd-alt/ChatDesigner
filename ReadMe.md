@@ -1,3 +1,0 @@
-# ChatDesigner
-
-`Added MVVM Pattern`
