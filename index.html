@@ -19,7 +19,9 @@
             <div class="col bg-warning p-2">
 
                 <fieldset>
-                    <legend>Chat Window</legend>
+                    <legend><span class="pe-4">Chat Window</span>
+                        <span class="btn btn-solid btn-primary" data-bind="click: getNewChatProperties">Get ViewModel</span>
+                    </legend>
                     <hr>
                     <input data-role="textbox" data-label="{content:'Width',floating:true}" data-bind="value: chatWidth" />
                     <input data-role="textbox" data-label="{content:'Height',floating:true}" data-bind="events:{change:onChangeChatHeight},value: chatHeight" />
@@ -30,7 +32,7 @@
                 
                 
                 <fieldset>
-                    <legend><span class="pe-4">Header</span> <input data-role="switch"  data-label="{content:'Text',floating:true}" data-bind="value: headerDisplay" /></legend>
+                    <legend><span class="pe-4">Header</span> <input data-role="switch"  data-label="{content:'Text',floating:true}" data-bind="events:{change:toggleHeader},value: headerDisplay" /></legend>
                     <hr>
                         <input data-role="textbox" data-label="{content:'Text',floating:true}" data-bind="visible:headerDisplay,value: headerText" />
                         <input data-role="textbox" data-label="{content:'Text Color',floating:true}" data-bind="visible:headerDisplay,value: headerTextColor"  />
@@ -42,7 +44,7 @@
                 </fieldset>
                     
                 <fieldset>
-                        <legend><span class="pe-4">Footer</span> <input data-role="switch"  data-label="{content:'Text',floating:true}" data-bind="value: footerDisplay" /></legend>
+                        <legend><span class="pe-4">Footer</span> <input data-role="switch"  data-label="{content:'Text',floating:true}" data-bind="events:{change:toggleFooter},value: footerDisplay" /></legend>
                         <hr>
                         <input data-role="textbox" data-label="{content:'Text',floating:true}" data-bind="visible:footerDisplay,value: footerText" />
                         <input data-role="textbox" data-label="{content:'Text Color',floating:true}" data-bind="visible:footerDisplay,value: footerTextColor" />
@@ -55,7 +57,7 @@
 
             </div>
             <div class="col bg-danger p-4">
-                    <div class="" data-bind="style:{width:chatWidth,height:chatHeight,border:chatBorder,border-radius:chatBorderRadius}">
+                    <div class="" data-bind="style:{width:chatWidth,border:chatBorder,border-radius:chatBorderRadius}">
                         
                         <!--Header-->
                         <div data-bind="visible:headerDisplay,style: {color: headerTextColor,
@@ -69,7 +71,7 @@
                         <!--Header-->
 
                         <!--Body-->
-                        <div id="chat" style="max-width:inherit;height: inherit;"></div>
+                        <div id="chat" style="max-width:inherit;height:600px;"></div>
                         <!--Body-->
 
                         <!--Footer-->
@@ -87,12 +89,12 @@
         </div>
         <div class="row my-4">
             <div class="col-6 h-50">
-                <div id="container">
+                <!-- <div id="container">
                     <input data-role="autocomplete"
                         data-ignore-case="true"
                         data-text-field="name"
                         data-source="{data: [{name: 'Sunday'},{name: 'Monday'}]}" />
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
